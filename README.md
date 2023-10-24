@@ -6,7 +6,7 @@
 -- Python Django
 
 
-# Using on arch Linux / Other OS will use Other Package Management..
+# Using on arch Linux / Other OS will use Other Package Manager..
 ## Install
 ```
 $ git clone https://github.com/omerbozkurts/BSM201_BurakHasanErdogan_SahinKenger
