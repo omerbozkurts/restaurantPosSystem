@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Coffee(models.Model):
+    name_of_coffee = models.CharField(max_length=200)
+    price = models.IntegerField()
+ 
+
