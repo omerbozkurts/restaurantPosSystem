@@ -5,7 +5,5 @@
 
 <h2>CLI commands</h2>
 ~~~
-
 pip install pyserial
-
 ~~~
