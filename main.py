@@ -1,11 +1,9 @@
 import PySimpleGUI as sg
 from data_structures.stack import Stack
 from data_structures.linked_list import LinkedList
-from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import time
 import random
-import base64
 
 sg.theme('LightBlue7')
 
@@ -13,6 +11,7 @@ product_prices = {
     "Kahve": 45.0,
     "Çay": 15.0,
     "Su": 5.0,
+    "Kacak cay":500,
     "MilkShake": 38.0,
     "Bubble Tea": 65.0,
     "Soğuk Kahve": 53.5,
@@ -21,6 +20,13 @@ product_prices = {
     "Kek": 35.0,
     "Pasta": 35.0,
     "CheeseCake": 74.75,
+    "Patlıcan Yemegi": 126.9,
+    "Makarna":170,
+    "Patates Kızartması":90,
+    "Hamburger":110,
+    "Pizza":150,
+    "Yengen Tostu":10,
+    "Kumru":80,
 }
 
 
@@ -40,6 +46,14 @@ desserts.append("Kek")
 desserts.append("Pasta")
 desserts.append("CheeseCake")
 
+foods = LinkedList()
+foods.append("Patlıcan Yemegi")
+foods.append("Makarna")
+foods.append("Patates Kızartması")
+foods.append("Hamburger")
+foods.append("Pizza")
+foods.append("Yengen Tostu")
+foods.append("Kumru")
 
 
 shopping_cart = Stack()
@@ -88,7 +102,7 @@ layout_main = [
     [sg.TabGroup([
         [sg.Tab('İçecekler', create_page_layout('İçecekler', drinks)),
          sg.Tab('Tatlılar', create_page_layout('Tatlılar', desserts)),
-         sg.Tab('Yemekler', create_page_layout('Yemekler', None))]
+         sg.Tab('Yemekler', create_page_layout('Yemekler', foods))]
     ])],
     [sg.Text('Alışveriş Sepeti', font=('Helvetica', 12))],
     [sg.Listbox(values=[], size=(40, 4), key='-CART-')],
